@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtQuery = new System.Windows.Forms.TextBox();
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.btnGenerate = new System.Windows.Forms.Button();
@@ -442,6 +443,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtOutput);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.ShowIcon = false;

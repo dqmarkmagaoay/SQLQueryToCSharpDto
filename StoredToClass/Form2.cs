@@ -50,8 +50,9 @@ namespace StoredToClass
                         throw new Exception("Server Name and Database name are required");
                     }
 
-                    //var connectionString = $"Data Source={txtServer.Text}; Initial Catalog={txtDatabase.Text}; Integrated Security=True; MultipleActiveResultSets=True;";
-                    var connectionString = $"Server={txtServer.Text};Database={txtDatabase.Text};Uid={txtUserId.Text};Pwd={txtPassword.Text};SslMode=Preferred;";
+                    if (!int.TryParse(txtPort.Text, out int port))
+                        port = 3306;
+                    var connectionString = $"Server={txtServer.Text};port={port};Database={txtDatabase.Text};Uid={txtUserId.Text};Pwd={txtPassword.Text};SslMode=Preferred;";
                     using (var conn = new MySqlConnection(connectionString))
                     using (var cmd = new MySqlCommand(txtQuery.Text, conn))
                     using (var adapter = new MySqlDataAdapter(cmd))
@@ -302,12 +303,12 @@ namespace StoredToClass
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.DS = txtServer.Text;
-            Properties.Settings.Default.DB = txtDatabase.Text;
-            Properties.Settings.Default.Query = txtQuery.Text;
-            Properties.Settings.Default.Api = txtAPI.Text;
-            Properties.Settings.Default.Json = txtJSON.Text;
-            Properties.Settings.Default.OutputText = txtOutput.Text;
+            //Properties.Settings.Default.DS = txtServer.Text;
+            //Properties.Settings.Default.DB = txtDatabase.Text;
+            //Properties.Settings.Default.Query = txtQuery.Text;
+            //Properties.Settings.Default.Api = txtAPI.Text;
+            //Properties.Settings.Default.Json = txtJSON.Text;
+            //Properties.Settings.Default.OutputText = txtOutput.Text;
             Properties.Settings.Default.Save();
         }
 
@@ -626,6 +627,11 @@ namespace StoredToClass
                     Activate();
                 }, null);
             }, TaskCreationOptions.LongRunning);
+        }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
         //private void Form2_LocationChanged(object sender, EventArgs e)

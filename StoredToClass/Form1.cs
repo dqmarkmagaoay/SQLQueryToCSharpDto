@@ -304,12 +304,12 @@ namespace StoredToClass
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.DS = txtServer.Text;
-            Properties.Settings.Default.DB = txtDatabase.Text;
-            Properties.Settings.Default.Query = txtQuery.Text;
-            Properties.Settings.Default.Api = txtAPI.Text;
-            Properties.Settings.Default.Json = txtJSON.Text;
-            Properties.Settings.Default.OutputText = txtOutput.Text;
+            //Properties.Settings.Default.DS = txtServer.Text;
+            //Properties.Settings.Default.DB = txtDatabase.Text;
+            //Properties.Settings.Default.Query = txtQuery.Text;
+            //Properties.Settings.Default.Api = txtAPI.Text;
+            //Properties.Settings.Default.Json = txtJSON.Text;
+            //Properties.Settings.Default.OutputText = txtOutput.Text;
             Properties.Settings.Default.Save();
         }
 
