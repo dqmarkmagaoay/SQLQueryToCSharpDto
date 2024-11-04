@@ -73,7 +73,7 @@
             this.btnGenerate.Margin = new System.Windows.Forms.Padding(0);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(408, 23);
-            this.btnGenerate.TabIndex = 3;
+            this.btnGenerate.TabIndex = 6;
             this.btnGenerate.Text = "GENERATE";
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.button1_Click);
@@ -102,7 +102,7 @@
             this.btnGenerateFromApi.Location = new System.Drawing.Point(3, 185);
             this.btnGenerateFromApi.Name = "btnGenerateFromApi";
             this.btnGenerateFromApi.Size = new System.Drawing.Size(408, 23);
-            this.btnGenerateFromApi.TabIndex = 5;
+            this.btnGenerateFromApi.TabIndex = 18;
             this.btnGenerateFromApi.Text = "GENERATE";
             this.btnGenerateFromApi.UseVisualStyleBackColor = true;
             this.btnGenerateFromApi.Click += new System.EventHandler(this.btnGenerateFromApi_Click);
@@ -116,7 +116,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(422, 237);
-            this.tabControl1.TabIndex = 9;
+            this.tabControl1.TabIndex = 14;
             // 
             // tabPage1
             // 
@@ -156,7 +156,7 @@
             this.txtPort.Location = new System.Drawing.Point(143, 19);
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(76, 20);
-            this.txtPort.TabIndex = 18;
+            this.txtPort.TabIndex = 1;
             this.txtPort.Text = global::StoredToClass.Properties.Settings.Default.Port;
             // 
             // label6
@@ -183,7 +183,7 @@
             this.txtPassword.Location = new System.Drawing.Point(225, 58);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(183, 20);
-            this.txtPassword.TabIndex = 15;
+            this.txtPassword.TabIndex = 4;
             this.txtPassword.Text = global::StoredToClass.Properties.Settings.Default.Password;
             // 
             // txtUserId
@@ -192,7 +192,7 @@
             this.txtUserId.Location = new System.Drawing.Point(225, 19);
             this.txtUserId.Name = "txtUserId";
             this.txtUserId.Size = new System.Drawing.Size(183, 20);
-            this.txtUserId.TabIndex = 14;
+            this.txtUserId.TabIndex = 2;
             this.txtUserId.Text = global::StoredToClass.Properties.Settings.Default.User;
             // 
             // label4
@@ -222,7 +222,7 @@
             this.txtQuery.Name = "txtQuery";
             this.txtQuery.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtQuery.Size = new System.Drawing.Size(408, 88);
-            this.txtQuery.TabIndex = 2;
+            this.txtQuery.TabIndex = 5;
             this.txtQuery.Text = global::StoredToClass.Properties.Settings.Default.Query;
             // 
             // txtDatabase
@@ -231,7 +231,7 @@
             this.txtDatabase.Location = new System.Drawing.Point(3, 58);
             this.txtDatabase.Name = "txtDatabase";
             this.txtDatabase.Size = new System.Drawing.Size(216, 20);
-            this.txtDatabase.TabIndex = 1;
+            this.txtDatabase.TabIndex = 3;
             this.txtDatabase.Text = global::StoredToClass.Properties.Settings.Default.DB;
             // 
             // txtServer
@@ -265,7 +265,7 @@
             this.txtJSON.Name = "txtJSON";
             this.txtJSON.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtJSON.Size = new System.Drawing.Size(408, 182);
-            this.txtJSON.TabIndex = 6;
+            this.txtJSON.TabIndex = 15;
             this.txtJSON.Text = global::StoredToClass.Properties.Settings.Default.Json;
             // 
             // btnJSON
@@ -274,7 +274,7 @@
             this.btnJSON.Location = new System.Drawing.Point(3, 185);
             this.btnJSON.Name = "btnJSON";
             this.btnJSON.Size = new System.Drawing.Size(408, 23);
-            this.btnJSON.TabIndex = 7;
+            this.btnJSON.TabIndex = 16;
             this.btnJSON.Text = "GENERATE";
             this.btnJSON.UseVisualStyleBackColor = true;
             this.btnJSON.Click += new System.EventHandler(this.btnJSON_Click);
@@ -300,7 +300,7 @@
             this.txtAPI.Name = "txtAPI";
             this.txtAPI.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtAPI.Size = new System.Drawing.Size(408, 182);
-            this.txtAPI.TabIndex = 4;
+            this.txtAPI.TabIndex = 17;
             this.txtAPI.Text = global::StoredToClass.Properties.Settings.Default.Api;
             // 
             // button1
@@ -308,7 +308,7 @@
             this.button1.Location = new System.Drawing.Point(241, 268);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(193, 23);
-            this.button1.TabIndex = 10;
+            this.button1.TabIndex = 8;
             this.button1.Text = "CLICK TO COPY THE TEXT BELOW";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.txtOutpput_MouseEnter);
@@ -325,7 +325,7 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(797, 518);
-            this.dataGridView.TabIndex = 11;
+            this.dataGridView.TabIndex = 13;
             this.dataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentDoubleClick);
             // 
             // button2
@@ -333,7 +333,7 @@
             this.button2.Location = new System.Drawing.Point(440, 11);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(797, 23);
-            this.button2.TabIndex = 12;
+            this.button2.TabIndex = 10;
             this.button2.Text = "CLICK TO CHANGE COLUMN MODE";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -353,14 +353,14 @@
             this.txtFilter.Multiline = true;
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(716, 23);
-            this.txtFilter.TabIndex = 14;
+            this.txtFilter.TabIndex = 11;
             // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(1162, 40);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 15;
+            this.button3.TabIndex = 12;
             this.button3.Text = "SEARCH";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -374,7 +374,7 @@
             this.txtOutput.ReadOnly = true;
             this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtOutput.Size = new System.Drawing.Size(422, 290);
-            this.txtOutput.TabIndex = 8;
+            this.txtOutput.TabIndex = 9;
             this.txtOutput.Text = global::StoredToClass.Properties.Settings.Default.OutputText;
             // 
             // cbAllowNullableString
@@ -385,7 +385,7 @@
             this.cbAllowNullableString.Location = new System.Drawing.Point(12, 274);
             this.cbAllowNullableString.Name = "cbAllowNullableString";
             this.cbAllowNullableString.Size = new System.Drawing.Size(85, 17);
-            this.cbAllowNullableString.TabIndex = 17;
+            this.cbAllowNullableString.TabIndex = 7;
             this.cbAllowNullableString.Text = "Allow string?";
             this.cbAllowNullableString.UseVisualStyleBackColor = true;
             // 
