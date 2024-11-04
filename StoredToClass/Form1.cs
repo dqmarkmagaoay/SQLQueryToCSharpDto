@@ -33,7 +33,8 @@ namespace StoredToClass
             CheckInputs(((Control)sender).Parent);
             txtOutput.Text = string.Empty;
             var builder = new StringBuilder();
-            builder.AppendLine("public class YourClassName{");
+            builder.AppendLine("public class YourClassName");
+            builder.AppendLine("{");
             Cursor = Cursors.WaitCursor;
             ToggleControls(false);
             var builder1 = builder;
@@ -167,7 +168,8 @@ namespace StoredToClass
             CheckInputs(((Control)sender).Parent);
             txtOutput.Text = string.Empty;
             var builder = new StringBuilder();
-            builder.AppendLine("public class YourClassName{");
+            builder.AppendLine("public class YourClassName");
+            builder.AppendLine("{");
             Cursor = Cursors.WaitCursor;
             ToggleControls(false);
             var builder1 = builder;
@@ -257,7 +259,8 @@ namespace StoredToClass
             CheckInputs(((Control)sender).Parent);
             txtOutput.Text = string.Empty;
             var builder = new StringBuilder();
-            builder.AppendLine("public class YourClassName{");
+            builder.AppendLine("public class YourClassName");
+            builder.AppendLine("{");
             Cursor = Cursors.WaitCursor;
             ToggleControls(false);
             var builder1 = builder;
