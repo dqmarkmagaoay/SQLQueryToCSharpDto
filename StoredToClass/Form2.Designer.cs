@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtQuery = new System.Windows.Forms.TextBox();
-            this.txtOutput = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.btnGenerate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtAPI = new System.Windows.Forms.TextBox();
             this.btnGenerateFromApi = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
@@ -43,24 +41,29 @@
             this.txtPrism = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.txtJSON = new System.Windows.Forms.TextBox();
             this.btnJSON = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUserId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtDatabase = new System.Windows.Forms.TextBox();
-            this.txtServer = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.txtTotalRows = new System.Windows.Forms.Label();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.txtPort = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUserId = new System.Windows.Forms.TextBox();
+            this.txtQuery = new System.Windows.Forms.TextBox();
+            this.txtDatabase = new System.Windows.Forms.TextBox();
+            this.txtServer = new System.Windows.Forms.TextBox();
+            this.txtJSON = new System.Windows.Forms.TextBox();
+            this.txtAPI = new System.Windows.Forms.TextBox();
+            this.txtOutput = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -69,30 +72,6 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtQuery
-            // 
-            this.txtQuery.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "Query", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtQuery.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtQuery.Location = new System.Drawing.Point(3, 97);
-            this.txtQuery.Multiline = true;
-            this.txtQuery.Name = "txtQuery";
-            this.txtQuery.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtQuery.Size = new System.Drawing.Size(408, 88);
-            this.txtQuery.TabIndex = 2;
-            this.txtQuery.Text = global::StoredToClass.Properties.Settings.Default.Query;
-            // 
-            // txtOutput
-            // 
-            this.txtOutput.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "OutputText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtOutput.Location = new System.Drawing.Point(12, 297);
-            this.txtOutput.Multiline = true;
-            this.txtOutput.Name = "txtOutput";
-            this.txtOutput.ReadOnly = true;
-            this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtOutput.Size = new System.Drawing.Size(422, 290);
-            this.txtOutput.TabIndex = 8;
-            this.txtOutput.Text = global::StoredToClass.Properties.Settings.Default.OutputText;
             // 
             // btnGenerate
             // 
@@ -124,18 +103,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "OUTPUT";
             // 
-            // txtAPI
-            // 
-            this.txtAPI.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "Api", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtAPI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAPI.Location = new System.Drawing.Point(3, 3);
-            this.txtAPI.Multiline = true;
-            this.txtAPI.Name = "txtAPI";
-            this.txtAPI.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtAPI.Size = new System.Drawing.Size(408, 182);
-            this.txtAPI.TabIndex = 4;
-            this.txtAPI.Text = global::StoredToClass.Properties.Settings.Default.Api;
-            // 
             // btnGenerateFromApi
             // 
             this.btnGenerateFromApi.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -149,11 +116,11 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -240,19 +207,6 @@
             this.tabPage3.Text = "JSON TO CLASS";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // txtJSON
-            // 
-            this.txtJSON.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "Json", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtJSON.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtJSON.Location = new System.Drawing.Point(3, 3);
-            this.txtJSON.MaxLength = 0;
-            this.txtJSON.Multiline = true;
-            this.txtJSON.Name = "txtJSON";
-            this.txtJSON.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtJSON.Size = new System.Drawing.Size(408, 182);
-            this.txtJSON.TabIndex = 6;
-            this.txtJSON.Text = global::StoredToClass.Properties.Settings.Default.Json;
-            // 
             // btnJSON
             // 
             this.btnJSON.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -278,6 +232,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.txtPort);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.txtPassword);
@@ -315,20 +271,6 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "USER ID:";
             // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(225, 58);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(183, 20);
-            this.txtPassword.TabIndex = 15;
-            // 
-            // txtUserId
-            // 
-            this.txtUserId.Location = new System.Drawing.Point(225, 19);
-            this.txtUserId.Name = "txtUserId";
-            this.txtUserId.Size = new System.Drawing.Size(183, 20);
-            this.txtUserId.TabIndex = 14;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -346,24 +288,6 @@
             this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 12;
             this.label2.Text = "DATABASE:";
-            // 
-            // txtDatabase
-            // 
-            this.txtDatabase.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "DB", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtDatabase.Location = new System.Drawing.Point(3, 58);
-            this.txtDatabase.Name = "txtDatabase";
-            this.txtDatabase.Size = new System.Drawing.Size(216, 20);
-            this.txtDatabase.TabIndex = 1;
-            this.txtDatabase.Text = global::StoredToClass.Properties.Settings.Default.DB;
-            // 
-            // txtServer
-            // 
-            this.txtServer.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "DS", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtServer.Location = new System.Drawing.Point(3, 19);
-            this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(216, 20);
-            this.txtServer.TabIndex = 0;
-            this.txtServer.Text = global::StoredToClass.Properties.Settings.Default.DS;
             // 
             // button1
             // 
@@ -427,6 +351,109 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // txtPort
+            // 
+            this.txtPort.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "Port", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtPort.Location = new System.Drawing.Point(143, 19);
+            this.txtPort.Name = "txtPort";
+            this.txtPort.Size = new System.Drawing.Size(76, 20);
+            this.txtPort.TabIndex = 18;
+            this.txtPort.Text = global::StoredToClass.Properties.Settings.Default.Port;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "Password", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtPassword.Location = new System.Drawing.Point(225, 58);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(183, 20);
+            this.txtPassword.TabIndex = 15;
+            this.txtPassword.Text = global::StoredToClass.Properties.Settings.Default.Password;
+            // 
+            // txtUserId
+            // 
+            this.txtUserId.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "User", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtUserId.Location = new System.Drawing.Point(225, 19);
+            this.txtUserId.Name = "txtUserId";
+            this.txtUserId.Size = new System.Drawing.Size(183, 20);
+            this.txtUserId.TabIndex = 14;
+            this.txtUserId.Text = global::StoredToClass.Properties.Settings.Default.User;
+            // 
+            // txtQuery
+            // 
+            this.txtQuery.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "Query", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtQuery.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtQuery.Location = new System.Drawing.Point(3, 97);
+            this.txtQuery.Multiline = true;
+            this.txtQuery.Name = "txtQuery";
+            this.txtQuery.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtQuery.Size = new System.Drawing.Size(408, 88);
+            this.txtQuery.TabIndex = 2;
+            this.txtQuery.Text = global::StoredToClass.Properties.Settings.Default.Query;
+            // 
+            // txtDatabase
+            // 
+            this.txtDatabase.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "DB", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtDatabase.Location = new System.Drawing.Point(3, 58);
+            this.txtDatabase.Name = "txtDatabase";
+            this.txtDatabase.Size = new System.Drawing.Size(216, 20);
+            this.txtDatabase.TabIndex = 1;
+            this.txtDatabase.Text = global::StoredToClass.Properties.Settings.Default.DB;
+            // 
+            // txtServer
+            // 
+            this.txtServer.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "DS", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtServer.Location = new System.Drawing.Point(3, 19);
+            this.txtServer.Name = "txtServer";
+            this.txtServer.Size = new System.Drawing.Size(134, 20);
+            this.txtServer.TabIndex = 0;
+            this.txtServer.Text = global::StoredToClass.Properties.Settings.Default.DS;
+            // 
+            // txtJSON
+            // 
+            this.txtJSON.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "Json", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtJSON.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtJSON.Location = new System.Drawing.Point(3, 3);
+            this.txtJSON.MaxLength = 0;
+            this.txtJSON.Multiline = true;
+            this.txtJSON.Name = "txtJSON";
+            this.txtJSON.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtJSON.Size = new System.Drawing.Size(408, 182);
+            this.txtJSON.TabIndex = 6;
+            this.txtJSON.Text = global::StoredToClass.Properties.Settings.Default.Json;
+            // 
+            // txtAPI
+            // 
+            this.txtAPI.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "Api", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtAPI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAPI.Location = new System.Drawing.Point(3, 3);
+            this.txtAPI.Multiline = true;
+            this.txtAPI.Name = "txtAPI";
+            this.txtAPI.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtAPI.Size = new System.Drawing.Size(408, 182);
+            this.txtAPI.TabIndex = 4;
+            this.txtAPI.Text = global::StoredToClass.Properties.Settings.Default.Api;
+            // 
+            // txtOutput
+            // 
+            this.txtOutput.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "OutputText", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtOutput.Location = new System.Drawing.Point(12, 297);
+            this.txtOutput.Multiline = true;
+            this.txtOutput.Name = "txtOutput";
+            this.txtOutput.ReadOnly = true;
+            this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtOutput.Size = new System.Drawing.Size(422, 290);
+            this.txtOutput.TabIndex = 8;
+            this.txtOutput.Text = global::StoredToClass.Properties.Settings.Default.OutputText;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(140, 3);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "PORT:";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,12 +469,14 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtOutput);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form2";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GENERATOR";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             this.tabControl1.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
@@ -500,6 +529,8 @@
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnEmail;
+        private System.Windows.Forms.TextBox txtPort;
+        private System.Windows.Forms.Label label7;
     }
 }
 
