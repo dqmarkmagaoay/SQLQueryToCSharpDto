@@ -1,11 +1,7 @@
-﻿using MySql.Data.MySqlClient;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -16,6 +12,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
 
 namespace StoredToClass
 {
@@ -35,7 +33,8 @@ namespace StoredToClass
             CheckInputs(((Control)sender).Parent);
             txtOutput.Text = string.Empty;
             var builder = new StringBuilder();
-            builder.AppendLine("public class YourClassName{");
+            builder.AppendLine("public class YourClassName");
+            builder.AppendLine("{");
             Cursor = Cursors.WaitCursor;
             ToggleControls(false);
             var builder1 = builder;
@@ -66,7 +65,12 @@ namespace StoredToClass
                         }, null);
                         foreach (DataColumn column in table.Columns)
                         {
-                            builder1.AppendLine($"public {column.DataType}{(column.AllowDBNull && column.DataType != typeof(string) ? "?" : "")} {column.ColumnName}  {{ get; set; }}");
+                            string str = Program
+                                .FixDataTypes(
+                                    $"public {column.DataType}{(column.AllowDBNull ? "?" : "")} {column.ColumnName}  {{ get; set; }}",
+                                    cbAllowNullableString.Checked
+                                );
+                            builder1.AppendLine(str);
                         }
                     }
                     builder1.AppendLine("\n}");
@@ -115,7 +119,7 @@ namespace StoredToClass
             {
                 return;
             } (list.FirstOrDefault() as TextBox)?.Focus();
-            throw new Exception("All field is required!");
+            throw new Exception("All fields are required!");
         }
 
         private void ToggleControls(bool enable)
@@ -162,7 +166,8 @@ namespace StoredToClass
             CheckInputs(((Control)sender).Parent);
             txtOutput.Text = string.Empty;
             var builder = new StringBuilder();
-            builder.AppendLine("public class YourClassName{");
+            builder.AppendLine("public class YourClassName");
+            builder.AppendLine("{");
             Cursor = Cursors.WaitCursor;
             ToggleControls(false);
             var builder1 = builder;
@@ -172,7 +177,7 @@ namespace StoredToClass
                 try
                 {
                     var table = new DataTable();
-                    var handler = new HttpClientHandler()
+                    var handler = new HttpClientHandler
                     {
                         AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
                     };
@@ -222,7 +227,12 @@ namespace StoredToClass
 
                     foreach (DataColumn column in table.Columns)
                     {
-                        builder1.AppendLine($"\npublic {column.DataType}{(column.AllowDBNull && column.DataType != typeof(string) ? "?" : "")} {column.ColumnName}  {{ get; set; }}");
+                        string str = Program
+                            .FixDataTypes(
+                                $"\npublic {column.DataType}{(column.AllowDBNull ? "?" : "")} {column.ColumnName}  {{ get; set; }}",
+                                cbAllowNullableString.Checked
+                            );
+                        builder1.AppendLine(str);
                     }
                     builder1.AppendLine("\n}");
                 }
@@ -247,7 +257,8 @@ namespace StoredToClass
             CheckInputs(((Control)sender).Parent);
             txtOutput.Text = string.Empty;
             var builder = new StringBuilder();
-            builder.AppendLine("public class YourClassName{");
+            builder.AppendLine("public class YourClassName");
+            builder.AppendLine("{");
             Cursor = Cursors.WaitCursor;
             ToggleControls(false);
             var builder1 = builder;
@@ -281,7 +292,12 @@ namespace StoredToClass
                     }, null);
                     foreach (DataColumn column in table.Columns)
                     {
-                        builder1.AppendLine($"\npublic {column.DataType}{(column.AllowDBNull && column.DataType != typeof(string) ? "?" : "")} {column.ColumnName}  {{ get; set; }}");
+                        string str = Program
+                            .FixDataTypes(
+                                $"\npublic {column.DataType}{(column.AllowDBNull ? "?" : "")} {column.ColumnName}  {{ get; set; }}",
+                                cbAllowNullableString.Checked
+                            );
+                        builder1.AppendLine(str);
                     }
                     builder1.AppendLine("\n}");
                 }
@@ -299,17 +315,6 @@ namespace StoredToClass
                     txtTotalRows.Text = $@"Total: {dataGridView.RowCount}";
                 }, null);
             }, TaskCreationOptions.LongRunning);
-        }
-
-        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //Properties.Settings.Default.DS = txtServer.Text;
-            //Properties.Settings.Default.DB = txtDatabase.Text;
-            //Properties.Settings.Default.Query = txtQuery.Text;
-            //Properties.Settings.Default.Api = txtAPI.Text;
-            //Properties.Settings.Default.Json = txtJSON.Text;
-            //Properties.Settings.Default.OutputText = txtOutput.Text;
-            Properties.Settings.Default.Save();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -369,7 +374,7 @@ namespace StoredToClass
                     DataTable table = null;
                     if (string.IsNullOrEmpty(txt))
                         throw new Exception("No value to search");
-                    var strArray = new List<string>() { };
+                    var strArray = new List<string>();
                     if (!txt.Contains(","))
                     {
                         strArray.Add(txt);
@@ -381,7 +386,7 @@ namespace StoredToClass
 
                     foreach (var str in strArray)
                     {
-                        var handler = new HttpClientHandler()
+                        var handler = new HttpClientHandler
                         {
                             AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
                         };
@@ -502,7 +507,7 @@ namespace StoredToClass
                     DataTable table = null;
                     if (string.IsNullOrEmpty(txt))
                         throw new Exception("No value to search");
-                    var strArray = new List<string>() { };
+                    var strArray = new List<string>();
                     if (!txt.Contains(","))
                     {
                         strArray.Add(txt);
@@ -515,7 +520,7 @@ namespace StoredToClass
                     watch.Start();
                     foreach (var str in strArray)
                     {
-                        var handler = new HttpClientHandler()
+                        var handler = new HttpClientHandler
                         {
                             AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
                         };
@@ -633,13 +638,5 @@ namespace StoredToClass
         {
             Application.Exit();
         }
-
-        //private void Form2_LocationChanged(object sender, EventArgs e)
-        //{
-        //    WindowState = FormWindowState.Normal;
-        //    var formSize = new Size(Screen.GetWorkingArea(this).Width, 651);
-        //    Size = new Size(formSize.Width, formSize.Height);
-        //    WindowState = FormWindowState.Normal;
-        //}
     }
 }

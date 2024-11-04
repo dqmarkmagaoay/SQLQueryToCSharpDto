@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StoredToClass
@@ -31,11 +24,10 @@ namespace StoredToClass
             switch (cmbServerType.Text)
             {
                 case "MYSQL":
-                    this.Hide();
-                    (new Form2()).Show();
+                    new Form2().Show();
                     break;
                 case "MSSQL":
-                    (new Form1()).Show();
+                    new Form1().Show();
                     break;
                 default:
                     throw new Exception("SELECT A SERVER TYPE");

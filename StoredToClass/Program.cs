@@ -34,6 +34,23 @@ namespace StoredToClass
             var ex = ExceptionHandler.GetMessages((Exception)e.ExceptionObject);
             MessageBox.Show(ex);
         }
+
+        public static string FixDataTypes(string text, bool allowStringAsNullable = false)
+        {
+            text = text.Trim()
+                .Replace("Int.32", "int")
+                .Replace("Int32", "int")
+                .Replace("Int.64", "long")
+                .Replace("Int64", "long")
+                .Replace("Decimal", "decimal")
+                .Replace("String", "string")
+                .Replace("Boolean", "bool");
+            if (!allowStringAsNullable)
+            {
+                text = text.Replace("string?", "string");
+            }
+            return text;
+        }
     }
     /// <summary>
     /// Handles exception detailing

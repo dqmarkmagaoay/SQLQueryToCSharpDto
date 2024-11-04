@@ -37,6 +37,15 @@
             this.txtAPI = new System.Windows.Forms.TextBox();
             this.btnGenerateFromApi = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUserId = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtDatabase = new System.Windows.Forms.TextBox();
+            this.txtServer = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnEmail = new System.Windows.Forms.Button();
@@ -47,27 +56,19 @@
             this.txtJSON = new System.Windows.Forms.TextBox();
             this.btnJSON = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtUserId = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtDatabase = new System.Windows.Forms.TextBox();
-            this.txtServer = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.txtTotalRows = new System.Windows.Forms.Label();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.cbAllowNullableString = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,16 +151,109 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(422, 237);
             this.tabControl1.TabIndex = 9;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.txtPassword);
+            this.tabPage1.Controls.Add(this.txtUserId);
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.txtQuery);
+            this.tabPage1.Controls.Add(this.btnGenerate);
+            this.tabPage1.Controls.Add(this.txtDatabase);
+            this.tabPage1.Controls.Add(this.txtServer);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(414, 211);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "SQL TO CLASS";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(222, 42);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "PASSWORD:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(222, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "USER ID:";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "Password", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtPassword.Location = new System.Drawing.Point(225, 58);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(183, 20);
+            this.txtPassword.TabIndex = 15;
+            this.txtPassword.Text = global::StoredToClass.Properties.Settings.Default.Password;
+            // 
+            // txtUserId
+            // 
+            this.txtUserId.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "User", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtUserId.Location = new System.Drawing.Point(225, 19);
+            this.txtUserId.Name = "txtUserId";
+            this.txtUserId.Size = new System.Drawing.Size(183, 20);
+            this.txtUserId.TabIndex = 14;
+            this.txtUserId.Text = global::StoredToClass.Properties.Settings.Default.User;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 81);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "SQL:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "DATABASE:";
+            // 
+            // txtDatabase
+            // 
+            this.txtDatabase.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "DB", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtDatabase.Location = new System.Drawing.Point(3, 58);
+            this.txtDatabase.Name = "txtDatabase";
+            this.txtDatabase.Size = new System.Drawing.Size(216, 20);
+            this.txtDatabase.TabIndex = 1;
+            this.txtDatabase.Text = global::StoredToClass.Properties.Settings.Default.DB;
+            // 
+            // txtServer
+            // 
+            this.txtServer.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "DS", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtServer.Location = new System.Drawing.Point(3, 19);
+            this.txtServer.Name = "txtServer";
+            this.txtServer.Size = new System.Drawing.Size(216, 20);
+            this.txtServer.TabIndex = 0;
+            this.txtServer.Text = global::StoredToClass.Properties.Settings.Default.DS;
             // 
             // tabPage5
             // 
@@ -277,100 +371,11 @@
             this.tabPage2.Text = "API TO CLASS";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.txtPassword);
-            this.tabPage1.Controls.Add(this.txtUserId);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.txtQuery);
-            this.tabPage1.Controls.Add(this.btnGenerate);
-            this.tabPage1.Controls.Add(this.txtDatabase);
-            this.tabPage1.Controls.Add(this.txtServer);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(414, 211);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "SQL TO CLASS";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(222, 42);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 13);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "PASSWORD:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(222, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "USER ID:";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(225, 58);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(183, 20);
-            this.txtPassword.TabIndex = 15;
-            // 
-            // txtUserId
-            // 
-            this.txtUserId.Location = new System.Drawing.Point(225, 19);
-            this.txtUserId.Name = "txtUserId";
-            this.txtUserId.Size = new System.Drawing.Size(183, 20);
-            this.txtUserId.TabIndex = 14;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 81);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "SQL:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "DATABASE:";
-            // 
-            // txtDatabase
-            // 
-            this.txtDatabase.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "DB", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtDatabase.Location = new System.Drawing.Point(3, 58);
-            this.txtDatabase.Name = "txtDatabase";
-            this.txtDatabase.Size = new System.Drawing.Size(216, 20);
-            this.txtDatabase.TabIndex = 1;
-            this.txtDatabase.Text = global::StoredToClass.Properties.Settings.Default.DB;
-            // 
-            // txtServer
-            // 
-            this.txtServer.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::StoredToClass.Properties.Settings.Default, "DS", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.txtServer.Location = new System.Drawing.Point(3, 19);
-            this.txtServer.Name = "txtServer";
-            this.txtServer.Size = new System.Drawing.Size(216, 20);
-            this.txtServer.TabIndex = 0;
-            this.txtServer.Text = global::StoredToClass.Properties.Settings.Default.DS;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 268);
+            this.button1.Location = new System.Drawing.Point(241, 268);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(422, 23);
+            this.button1.Size = new System.Drawing.Size(193, 23);
             this.button1.TabIndex = 10;
             this.button1.Text = "CLICK TO COPY THE TEXT BELOW";
             this.button1.UseVisualStyleBackColor = true;
@@ -428,11 +433,24 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // cbAllowNullableString
+            // 
+            this.cbAllowNullableString.AutoSize = true;
+            this.cbAllowNullableString.Checked = true;
+            this.cbAllowNullableString.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbAllowNullableString.Location = new System.Drawing.Point(12, 274);
+            this.cbAllowNullableString.Name = "cbAllowNullableString";
+            this.cbAllowNullableString.Size = new System.Drawing.Size(85, 17);
+            this.cbAllowNullableString.TabIndex = 16;
+            this.cbAllowNullableString.Text = "Allow string?";
+            this.cbAllowNullableString.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1249, 612);
+            this.Controls.Add(this.cbAllowNullableString);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.tabControl1);
@@ -449,8 +467,10 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GENERATOR";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -459,8 +479,6 @@
             this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -502,6 +520,7 @@
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnEmail;
+        private System.Windows.Forms.CheckBox cbAllowNullableString;
     }
 }
 
