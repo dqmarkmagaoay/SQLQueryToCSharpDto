@@ -635,5 +635,10 @@ namespace StoredToClass
                 }, null);
             }, TaskCreationOptions.LongRunning);
         }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
