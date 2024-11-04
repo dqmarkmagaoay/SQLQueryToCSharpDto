@@ -46,12 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtDatabase = new System.Windows.Forms.TextBox();
             this.txtServer = new System.Windows.Forms.TextBox();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.btnEmail = new System.Windows.Forms.Button();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.txtPrism = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.txtJSON = new System.Windows.Forms.TextBox();
             this.btnJSON = new System.Windows.Forms.Button();
@@ -65,8 +59,6 @@
             this.cbAllowNullableString = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -81,7 +73,7 @@
             this.txtQuery.Name = "txtQuery";
             this.txtQuery.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtQuery.Size = new System.Drawing.Size(408, 88);
-            this.txtQuery.TabIndex = 2;
+            this.txtQuery.TabIndex = 5;
             this.txtQuery.Text = global::StoredToClass.Properties.Settings.Default.Query;
             // 
             // txtOutput
@@ -93,7 +85,7 @@
             this.txtOutput.ReadOnly = true;
             this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtOutput.Size = new System.Drawing.Size(422, 290);
-            this.txtOutput.TabIndex = 8;
+            this.txtOutput.TabIndex = 9;
             this.txtOutput.Text = global::StoredToClass.Properties.Settings.Default.OutputText;
             // 
             // btnGenerate
@@ -103,7 +95,7 @@
             this.btnGenerate.Margin = new System.Windows.Forms.Padding(0);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(408, 23);
-            this.btnGenerate.TabIndex = 3;
+            this.btnGenerate.TabIndex = 6;
             this.btnGenerate.Text = "GENERATE";
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.button1_Click);
@@ -135,7 +127,7 @@
             this.txtAPI.Name = "txtAPI";
             this.txtAPI.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtAPI.Size = new System.Drawing.Size(408, 182);
-            this.txtAPI.TabIndex = 4;
+            this.txtAPI.TabIndex = 16;
             this.txtAPI.Text = global::StoredToClass.Properties.Settings.Default.Api;
             // 
             // btnGenerateFromApi
@@ -144,7 +136,7 @@
             this.btnGenerateFromApi.Location = new System.Drawing.Point(3, 185);
             this.btnGenerateFromApi.Name = "btnGenerateFromApi";
             this.btnGenerateFromApi.Size = new System.Drawing.Size(408, 23);
-            this.btnGenerateFromApi.TabIndex = 5;
+            this.btnGenerateFromApi.TabIndex = 17;
             this.btnGenerateFromApi.Text = "GENERATE";
             this.btnGenerateFromApi.UseVisualStyleBackColor = true;
             this.btnGenerateFromApi.Click += new System.EventHandler(this.btnGenerateFromApi_Click);
@@ -152,15 +144,13 @@
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(422, 237);
-            this.tabControl1.TabIndex = 9;
+            this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -207,7 +197,7 @@
             this.txtPassword.Location = new System.Drawing.Point(225, 58);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(183, 20);
-            this.txtPassword.TabIndex = 15;
+            this.txtPassword.TabIndex = 4;
             this.txtPassword.Text = global::StoredToClass.Properties.Settings.Default.Password;
             // 
             // txtUserId
@@ -216,7 +206,7 @@
             this.txtUserId.Location = new System.Drawing.Point(225, 19);
             this.txtUserId.Name = "txtUserId";
             this.txtUserId.Size = new System.Drawing.Size(183, 20);
-            this.txtUserId.TabIndex = 14;
+            this.txtUserId.TabIndex = 2;
             this.txtUserId.Text = global::StoredToClass.Properties.Settings.Default.User;
             // 
             // label4
@@ -243,7 +233,7 @@
             this.txtDatabase.Location = new System.Drawing.Point(3, 58);
             this.txtDatabase.Name = "txtDatabase";
             this.txtDatabase.Size = new System.Drawing.Size(216, 20);
-            this.txtDatabase.TabIndex = 1;
+            this.txtDatabase.TabIndex = 3;
             this.txtDatabase.Text = global::StoredToClass.Properties.Settings.Default.DB;
             // 
             // txtServer
@@ -252,76 +242,8 @@
             this.txtServer.Location = new System.Drawing.Point(3, 19);
             this.txtServer.Name = "txtServer";
             this.txtServer.Size = new System.Drawing.Size(216, 20);
-            this.txtServer.TabIndex = 0;
+            this.txtServer.TabIndex = 1;
             this.txtServer.Text = global::StoredToClass.Properties.Settings.Default.DS;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.txtEmail);
-            this.tabPage5.Controls.Add(this.btnEmail);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(414, 211);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "EMAIL TO HRID";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEmail.Location = new System.Drawing.Point(3, 3);
-            this.txtEmail.MaxLength = 0;
-            this.txtEmail.Multiline = true;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtEmail.Size = new System.Drawing.Size(408, 182);
-            this.txtEmail.TabIndex = 10;
-            // 
-            // btnEmail
-            // 
-            this.btnEmail.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnEmail.Location = new System.Drawing.Point(3, 185);
-            this.btnEmail.Name = "btnEmail";
-            this.btnEmail.Size = new System.Drawing.Size(408, 23);
-            this.btnEmail.TabIndex = 11;
-            this.btnEmail.Text = "GENERATE";
-            this.btnEmail.UseVisualStyleBackColor = true;
-            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.txtPrism);
-            this.tabPage4.Controls.Add(this.button4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(414, 211);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "HRID TO NT";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // txtPrism
-            // 
-            this.txtPrism.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPrism.Location = new System.Drawing.Point(3, 3);
-            this.txtPrism.MaxLength = 0;
-            this.txtPrism.Multiline = true;
-            this.txtPrism.Name = "txtPrism";
-            this.txtPrism.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtPrism.Size = new System.Drawing.Size(408, 182);
-            this.txtPrism.TabIndex = 8;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button4.Location = new System.Drawing.Point(3, 185);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(408, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "GENERATE";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // tabPage3
             // 
@@ -345,7 +267,7 @@
             this.txtJSON.Name = "txtJSON";
             this.txtJSON.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtJSON.Size = new System.Drawing.Size(408, 182);
-            this.txtJSON.TabIndex = 6;
+            this.txtJSON.TabIndex = 14;
             this.txtJSON.Text = global::StoredToClass.Properties.Settings.Default.Json;
             // 
             // btnJSON
@@ -354,7 +276,7 @@
             this.btnJSON.Location = new System.Drawing.Point(3, 185);
             this.btnJSON.Name = "btnJSON";
             this.btnJSON.Size = new System.Drawing.Size(408, 23);
-            this.btnJSON.TabIndex = 7;
+            this.btnJSON.TabIndex = 15;
             this.btnJSON.Text = "GENERATE";
             this.btnJSON.UseVisualStyleBackColor = true;
             this.btnJSON.Click += new System.EventHandler(this.btnJSON_Click);
@@ -376,7 +298,7 @@
             this.button1.Location = new System.Drawing.Point(241, 268);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(193, 23);
-            this.button1.TabIndex = 10;
+            this.button1.TabIndex = 8;
             this.button1.Text = "CLICK TO COPY THE TEXT BELOW";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.txtOutpput_MouseEnter);
@@ -393,7 +315,7 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.Size = new System.Drawing.Size(797, 518);
-            this.dataGridView.TabIndex = 11;
+            this.dataGridView.TabIndex = 13;
             this.dataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentDoubleClick);
             // 
             // button2
@@ -401,7 +323,7 @@
             this.button2.Location = new System.Drawing.Point(440, 11);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(797, 23);
-            this.button2.TabIndex = 12;
+            this.button2.TabIndex = 10;
             this.button2.Text = "CLICK TO CHANGE COLUMN MODE";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -421,14 +343,14 @@
             this.txtFilter.Multiline = true;
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(716, 23);
-            this.txtFilter.TabIndex = 14;
+            this.txtFilter.TabIndex = 11;
             // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(1162, 40);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 15;
+            this.button3.TabIndex = 12;
             this.button3.Text = "SEARCH";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -441,7 +363,7 @@
             this.cbAllowNullableString.Location = new System.Drawing.Point(12, 274);
             this.cbAllowNullableString.Name = "cbAllowNullableString";
             this.cbAllowNullableString.Size = new System.Drawing.Size(85, 17);
-            this.cbAllowNullableString.TabIndex = 16;
+            this.cbAllowNullableString.TabIndex = 7;
             this.cbAllowNullableString.Text = "Allow string?";
             this.cbAllowNullableString.UseVisualStyleBackColor = true;
             // 
@@ -471,10 +393,6 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -510,16 +428,10 @@
         private System.Windows.Forms.Label txtTotalRows;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TextBox txtPrism;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUserId;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Button btnEmail;
         private System.Windows.Forms.CheckBox cbAllowNullableString;
     }
 }
