@@ -7,7 +7,7 @@
     <ProjectGuid>{E0D2CAEB-4A7F-41AE-997E-EABF07966BE2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>StoredToClass</RootNamespace>
-    <AssemblyName>SqlApiJsonToClass</AssemblyName>
+    <AssemblyName>App</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
