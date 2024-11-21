@@ -24,9 +24,11 @@ namespace StoredToClass
             switch (cmbServerType.Text)
             {
                 case "MYSQL":
+					Hide();
                     new Form2().Show();
                     break;
                 case "MSSQL":
+	                Hide();
                     new Form1().Show();
                     break;
                 default:

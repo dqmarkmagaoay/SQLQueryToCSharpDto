@@ -25,6 +25,15 @@ namespace StoredToClass
             InitializeComponent();
             Context = SynchronizationContext.Current;
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            txtDatabase.Text = Properties.Settings.Default.DB;
+            txtServer.Text = Properties.Settings.Default.DS;
+            txtPort.Text = Properties.Settings.Default.Port;
+            txtUserId.Text = Properties.Settings.Default.User;
+            txtPassword.Text = Properties.Settings.Default.Password;
+            txtQuery.Text = Properties.Settings.Default.Query;
+            txtOutput.Text = Properties.Settings.Default.OutputText;
+            txtJSON.Text = Properties.Settings.Default.Json;
+            txtAPI.Text = Properties.Settings.Default.Api;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -359,7 +368,22 @@ namespace StoredToClass
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
+	        Properties.Settings.Default.DB = txtDatabase.Text;
+	        Properties.Settings.Default.DS = txtServer.Text;
+	        Properties.Settings.Default.Port = txtPort.Text;
+	        Properties.Settings.Default.User = txtUserId.Text;
+	        Properties.Settings.Default.Password = txtPassword.Text;
+	        Properties.Settings.Default.Query = txtQuery.Text;
+	        Properties.Settings.Default.OutputText = txtOutput.Text;
+	        Properties.Settings.Default.Json = txtJSON.Text;
+			Properties.Settings.Default.Api = txtAPI.Text;
+			Properties.Settings.Default.Save();
             Application.Exit();
         }
-    }
+
+		private void txtServer_TextChanged(object sender, EventArgs e)
+		{
+			//TODO
+		}
+	}
 }
