@@ -38,6 +38,8 @@ namespace StoredToClass
         public static string FixDataTypes(string text, bool allowStringAsNullable = false)
         {
             text = text.Trim()
+                .Replace("UInt64", "ulong")
+                .Replace("UInt32", "uint")
                 .Replace("Int.32", "int")
                 .Replace("Int32", "int")
                 .Replace("Int.64", "long")

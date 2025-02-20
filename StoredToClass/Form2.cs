@@ -27,7 +27,7 @@ namespace StoredToClass
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             txtDatabase.Text = Properties.Settings.Default.DB;
             txtServer.Text = Properties.Settings.Default.DS;
-            txtPort.Text = Properties.Settings.Default.Port;
+            txtPort.Text = string.IsNullOrEmpty(Properties.Settings.Default.Port) ? "3306" : Properties.Settings.Default.Port;
             txtUserId.Text = Properties.Settings.Default.User;
             txtPassword.Text = Properties.Settings.Default.Password;
             txtQuery.Text = Properties.Settings.Default.Query;
@@ -47,7 +47,7 @@ namespace StoredToClass
             ToggleControls(false);
             var builder1 = builder;
             dataGridView.DataSource = null;
-            Task.Factory.StartNew(() =>
+            Task.Factory.StartNew(async () =>
             {
                 var hasException = false;
                 try
@@ -59,14 +59,14 @@ namespace StoredToClass
 
                     if (!int.TryParse(txtPort.Text, out int port))
                         port = 3306;
-                    var connectionString = $"Server={txtServer.Text};port={port};Database={txtDatabase.Text};Uid={txtUserId.Text};Pwd={txtPassword.Text};SslMode=Preferred;";
+                    var connectionString = $"Server={txtServer.Text};port={port};Database={txtDatabase.Text};Uid={txtUserId.Text};Pwd={txtPassword.Text};SslMode=Preferred;ConnectionTimeout=30;DefaultCommandTimeout=600;";
                     using (var conn = new MySqlConnection(connectionString))
                     using (var cmd = new MySqlCommand(txtQuery.Text, conn))
                     using (var adapter = new MySqlDataAdapter(cmd))
                     {
-                        conn.Open();
+                        await conn.OpenAsync();
                         var table = new DataTable();
-                        adapter.Fill(table);
+                        await adapter.FillAsync(table);
                         Context.Post(_ =>
                         {
                             dataGridView.DataSource = table;
@@ -166,7 +166,7 @@ namespace StoredToClass
                 txt = text;
             }
             Clipboard.SetText(txt, TextDataFormat.UnicodeText);
-            throw new Exception("Copied");
+            copyText.Text = @"👍 Copied ✅";
         }
 
         private void btnGenerateFromApi_Click(object sender, EventArgs e)
